@@ -2,7 +2,10 @@ var express = require("express");
 
 var app = express();
 
+app.set("view engine", "html");
+
 app.use(require("./routes"));
+app.use(express.static('public'));
 
 app.listen(8080, function () {
     console.log("Listening on port 8080...");
